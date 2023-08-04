@@ -1,5 +1,8 @@
 package curso_java;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -7,7 +10,7 @@ import java.util.Scanner;
 public class main{
 
 	public static void main(String[] args){
-		exec03();
+		exec13();
 	}
 	
 	public static void exec000() {
@@ -224,6 +227,48 @@ public class main{
 		}
 		System.out.println("chama saiu");
 	}
+	
+	public static void exec11() {
+		
+		Scanner sc = new Scanner(System.in);
+		int valor = sc.nextInt();
+		
+		for(int x = 0 ; x < valor && valor <= 1000 ; x++) {
+			if(x % 2 == 1) System.out.println(x);
+		}
+		sc.close();
+		System.out.println("chama");
+	}
+	
+	public static void exec12() {
+		System.out.println("digite o num de repetições");
+		Scanner sc = new Scanner(System.in);
+		int in=0,out=0,chama=0;
+		int n = sc.nextInt();
+		for(int x = 0 ; x < n ; x++) {
+			chama = sc.nextInt();
+			if(chama >= 10 && chama <= 20){in++;}
+			if(chama < 10 || chama > 20){out++;}
+		}
+		System.out.printf("%d IN%n%d Out",in,out);
+	}
+	
+	public static void exec13() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int loop = sc.nextInt();
+		String result = "";
+		double x,y,z;
+		for(int i=0 ; i<loop ; i++) {
+			x = sc.nextDouble();
+			y = sc.nextDouble();
+			z = sc.nextDouble();
+			result += (x+y+z)/3 + "%n";
+		}
+		System.out.println(result);
+		
+	}
+	
 	
 	
 }
